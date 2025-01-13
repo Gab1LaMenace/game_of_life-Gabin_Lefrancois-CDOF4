@@ -38,17 +38,23 @@ def get_live_neighbors(row, col, rows, cols, grid):
     return life_sum
 
 def run_game():
-    rows, cols = 20, 20  # Reduced grid size for better readability
+    # Allow user to choose the dimensions of the grid
+    rows = int(input("Enter the number of rows for the grid: "))
+    cols = int(input("Enter the number of columns for the grid: "))
+
     current_generation = create_grid(rows, cols)
     next_generation = create_grid(rows, cols)
+
     generations = 100  # Limit the number of generations
     for gen in range(1, generations + 1):
         print_grid(rows, cols, current_generation, gen)
         create_next_grid(rows, cols, current_generation, next_generation)
         time.sleep(2)  # Adjust speed for readability
         current_generation, next_generation = next_generation, current_generation
+
     print_grid(rows, cols, current_generation, generations)
     return input("<Enter> to exit or r to run again: ")
+
 
 run = "r"
 while run == "r":
