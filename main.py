@@ -7,7 +7,7 @@ import time
 vals = [0, 1]
 
 def create_grid(rows, cols):
-    return np.random.choice(vals, rows * cols, p=[0.2, 0.8]).reshape(rows, cols)
+    return np.random.choice(vals, rows * cols, p=[0.3, 0.8]).reshape(rows, cols)
 
 def print_grid(rows, cols, grid, generation):
     os.system('cls' if os.name == 'nt' else 'clear')  # Clear console
